@@ -1,0 +1,57 @@
+.section-text-component {
+    display: inline-flex;
+    flex-direction: row;
+
+    &.edit {
+        display: flex;
+        border: 2px solid black;
+    }
+
+    &:hover {
+        .section-text-edit-buttons {
+            display: flex;
+        }
+    }
+
+    .pwd-textarea-component {
+        flex: 1;
+    }
+
+    .section-text-edit-buttons {
+        display: none;
+        flex-direction: row;
+        width: auto;
+        max-height: 29px;
+        font-size: initial;
+
+        &.visible {
+            display: flex;
+        }
+
+        span {
+            cursor: pointer;
+            text-align: center;
+            width: 21px;
+
+            &.save-button {
+                color: #fff;
+                background: #2b9d34;
+                border: 1px solid #207727;
+            }
+
+            &.cancel-button {
+                color: white;
+                background: #247fcd;
+                border: 1px solid #1a5991;
+            }
+
+            &.remove-button {
+                color: red;
+            }
+        }
+
+        &.always-visible{
+            visibility: visible;
+        }
+    }
+}
