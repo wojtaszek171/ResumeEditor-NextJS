@@ -1,6 +1,6 @@
 import { ImageUpload } from 'pwojtaszko-design';
 import { FC } from 'react';
-import './TopBar.scss';
+import styles from './TopBar.module.scss';
 
 interface ImageEditProps {
     edit: boolean;
@@ -10,7 +10,7 @@ interface ImageEditProps {
 const ImageEdit: FC<ImageEditProps> = ({ photo, edit }) => {
 
   return (
-    <div className='person-photo'>
+    <div className={styles.personPhoto}>
         {edit ?
             <ImageUpload
                 photo={photo}
@@ -18,7 +18,7 @@ const ImageEdit: FC<ImageEditProps> = ({ photo, edit }) => {
                 round
             /> :
             <img
-                className='person-photo-img'
+                className={styles.personPhotoImg}
                 src={photo}
                 alt='cv person'
             />

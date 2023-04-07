@@ -5,7 +5,7 @@ import { FC } from 'react';
 // import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import SectionText from '../SectionText';
 import SectionWrapper from '../SectionWrapper';
-import './Contact.scss';
+import styles from './Contact.module.scss';
 
 const Contact: FC = () => {
   // const { address, phone, email } = useAppSelector(getCVDetailsUser);
@@ -30,10 +30,10 @@ const Contact: FC = () => {
     <SectionWrapper
       title='Contact'
     >
-      <div className="contact-component">
-        <div className='contact-section'>
-          <span className='contact-section-title'>Address</span>
-          <span className='section-content'>
+      <div className={styles.contactComponent}>
+        <div className={styles.contactSection}>
+          <span className={styles.contactSectionTitle}>Address</span>
+          <span>
             {/* <SectionText
               placeholder='Address'
               text={tAddress}
@@ -41,9 +41,9 @@ const Contact: FC = () => {
             /> */}
           </span>
         </div>
-        <div className='contact-section'>
-          <span className='contact-section-title'>Phone</span>
-          <span className='section-content'>
+        <div className={styles.contactSection}>
+          <span className={styles.contactSectionTitle}>Phone</span>
+          <span>
             {/* <SectionText
               placeholder='Phone'
               text={phone}
@@ -51,9 +51,9 @@ const Contact: FC = () => {
             /> */}
           </span>
         </div>
-        <div className='contact-section'>
-          <span className='contact-section-title'>Email</span>
-          <span className='section-content'>
+        <div className={styles.contactSection}>
+          <span className={styles.contactSectionTitle}>Email</span>
+          <span>
             {/* <SectionText
               placeholder='Email'
               text={email?.length ? email : ''}

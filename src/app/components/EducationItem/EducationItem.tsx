@@ -1,12 +1,7 @@
 import { FC } from 'react';
-import useCVTranslation from '../../../helpers/useCVTranslation';
-import { deleteEducationItem, updateEducationItem } from '../../../store/cvDetails/cvDetailsSlice';
-import { getSelectedLanguage } from '../../../store/cvDetails/selector';
-import { EducationItem as EducationItemType } from '../../../store/cvDetails/types';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import DeleteItemButton from '../DeleteItemButton';
-import SectionText from '../SectionText';
-import './EducationItem.scss';
+import styles from './EducationItem.module.scss';
+import { EducationItem as EducationItemType } from '@/app/api/types';
 
 interface EducationItemProps extends EducationItemType {}
 
@@ -45,9 +40,9 @@ const EducationItem: FC<EducationItemProps> = ({ id, school, location, degree, d
   // const dateString = (startDate ? (new Date(startDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : '') + ' - ' + (endDate ? (new Date(endDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : 'Present')
 
   return (
-    <div className='education-component'>
-      <div className='education-header'>
-        <span className='education-title'>
+    <div className={styles.educationComponent}>
+      <div className={styles.educationHeader}>
+        <span className={styles.educationTitle}>
           {/* <SectionText
             placeholder='School'
             text={tSchool}
@@ -60,7 +55,7 @@ const EducationItem: FC<EducationItemProps> = ({ id, school, location, degree, d
             onSave={handleDegreeSave}
           /> */}
         </span>
-        <span className='education-location'>
+        <span className={styles.educationLocation}>
           {/* <SectionText
             placeholder='School location'
             text={tLocation}
@@ -68,14 +63,14 @@ const EducationItem: FC<EducationItemProps> = ({ id, school, location, degree, d
           /> */}
         </span>
       </div>
-      <span className='time-frame'>
+      <span className={styles.timeFrame}>
         {/* <SectionText
           placeholder='Time frame'
           text={dateString}
           onSave={handleSchoolTimeFrameSave}
         /> */}
       </span>
-      <div className='education-details'>
+      <div className={styles.educationDetails}>
         {/* <SectionText
           placeholder='Details'
           text={tDetails}

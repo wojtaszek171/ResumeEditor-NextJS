@@ -1,12 +1,8 @@
 import { FC } from 'react';
-import useCVTranslation from '../../../helpers/useCVTranslation';
-import { deleteEmploymentItem, updateEmploymentItem } from '../../../store/cvDetails/cvDetailsSlice';
-import { getSelectedLanguage } from '../../../store/cvDetails/selector';
-import { EmploymentItem } from '../../../store/cvDetails/types';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import DeleteItemButton from '../DeleteItemButton';
 import SectionText from '../SectionText';
-import './JobItem.scss';
+import styles from './JobItem.module.scss';
+import { EmploymentItem } from '@/app/api/types';
 
 interface JobItemProps extends EmploymentItem {}
 
@@ -44,9 +40,9 @@ const JobItem: FC<JobItemProps> = ({ id, company, position, location, startDate,
   // const dateString = (startDate ? (new Date(startDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : '') + ' - ' + (endDate ? (new Date(endDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : 'Present')
 
   return (
-    <div className='job-component'>
-      <div className='job-header'>
-        <span className='job-title'>
+    <div className={styles.jobComponent}>
+      <div className={styles.jobHeader}>
+        <span className={styles.jobTitle}>
           {/* <SectionText
             placeholder='Profession'
             text={tPosition}
@@ -59,7 +55,7 @@ const JobItem: FC<JobItemProps> = ({ id, company, position, location, startDate,
             onSave={handleCompanySave}
           />
         </span>
-        <span className='job-location'>
+        <span className={styles.jobLocation}>
           {/* <SectionText
             placeholder='Office location'
             text={tLocation}
@@ -67,7 +63,7 @@ const JobItem: FC<JobItemProps> = ({ id, company, position, location, startDate,
           /> */}
         </span>
       </div>
-      <span className='time-frame'>
+      <span className={styles.timeFrame}>
         {/* <SectionText
           placeholder='Time Frame'
           text={dateString}
@@ -75,7 +71,7 @@ const JobItem: FC<JobItemProps> = ({ id, company, position, location, startDate,
           editable={false}
         /> */}
       </span>
-      <div className='job-details'>
+      <div className={styles.jobDetails}>
         {/* <SectionText
           placeholder='Details'
           text={tDetails}

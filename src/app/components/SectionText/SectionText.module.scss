@@ -1,4 +1,4 @@
-.section-text-component {
+.sectionTextComponent {
     display: inline-flex;
     flex-direction: row;
 
@@ -17,7 +17,7 @@
         flex: 1;
     }
 
-    .section-text-edit-buttons {
+    .sectionTextEditButtons {
         display: none;
         flex-direction: row;
         width: auto;
@@ -33,19 +33,19 @@
             text-align: center;
             width: 21px;
 
-            &.save-button {
+            &.saveButton {
                 color: #fff;
                 background: #2b9d34;
                 border: 1px solid #207727;
             }
 
-            &.cancel-button {
+            &.cancelButton {
                 color: white;
                 background: #247fcd;
                 border: 1px solid #1a5991;
             }
 
-            &.remove-button {
+            &.removeButton {
                 color: red;
             }
         }

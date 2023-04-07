@@ -1,13 +1,13 @@
-.job-component {
+.jobComponent {
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
 
-    .job-header {
+    .jobHeader {
         display: flex;
 
-        .job-title {
+        .jobTitle {
             display: flex;
             font-size: 1.1rem;
             font-weight: 500;
@@ -15,11 +15,11 @@
             flex-wrap: wrap;
         }
     }
-    .time-frame {
+    .timeFrame {
         margin-top: 5px;
     }
 
-    .job-details {
+    .jobDetails {
         padding: 20px 0 0 20px;
     }
 }

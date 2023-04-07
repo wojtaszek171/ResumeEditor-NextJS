@@ -1,4 +1,4 @@
-.pwd-textarea-component {
+.textareaComponent {
     display: flex;
     flex-direction: row;
 
@@ -20,7 +20,7 @@
         resize: initial;
     }
 
-    .pwd-textarea-value {
+    .textareaValue {
         white-space: pre-line;
 
         &.placeholder {

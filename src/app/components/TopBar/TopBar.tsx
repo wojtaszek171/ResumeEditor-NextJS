@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import photoJPG from './profile.jpg';
 import ImageEdit from './ImageEdit';
 import SectionText from '../SectionText';
-import './TopBar.scss';
+import styles from './TopBar.module.scss';
 
 const Name: FC = () => {
   // const isLoggedIn = useSelector(getIsTokenValid);
@@ -46,20 +46,20 @@ const Name: FC = () => {
   };
 
   return (
-    <div className="top-bar-component">
+    <div className={styles.topBarComponent}>
       {/* <ImageEdit
         edit={isLoggedIn}
         photo={photo || ''}
       /> */}
-      <div className='name-wrapper'>
-        <span className='person-name'>
+      <div className={styles.nameWrapper}>
+        <span className={styles.personName}>
           <SectionText
             text={''}
             placeholder='Name'
             onSave={handleNameSave}
           />
         </span>
-        <span className='person-profession'>
+        <span className={styles.personProfession}>
           <SectionText
             placeholder='Profession'
             text={''}

@@ -1,5 +1,5 @@
 import { ChangeEvent, FC } from 'react';
-import './EditableText.scss';
+import styles from './EditableText.module.scss';
 
 
 interface TextAreaProps {
@@ -32,7 +32,7 @@ const TextArea: FC<TextAreaProps> = ({ text, placeholder, showPlaceholder, onCha
   }
 
   return (
-    <div className={`pwd-textarea-component${resizeable ? ' resizeable' : ''}`}>
+    <div className={`${styles.textareaComponent} ${resizeable ? styles.resizeable : ''}`}>
       {editMode
         ?
         <textarea
@@ -43,7 +43,7 @@ const TextArea: FC<TextAreaProps> = ({ text, placeholder, showPlaceholder, onCha
           value={text}
         />
         : <span
-          className={`pwd-textarea-value${!text?.length ? ' placeholder' : ''}`}>
+          className={`${styles.textareaValue} ${!text?.length ? styles.placeholder : ''}`}>
             {text || (showPlaceholder && `${placeholder}`)}
           </span>
       }

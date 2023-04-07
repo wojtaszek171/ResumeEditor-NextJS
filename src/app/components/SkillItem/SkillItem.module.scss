@@ -1,19 +1,19 @@
-.skill-component {
+.skillComponent {
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
 
-    .skill-title {
+    .skillTitle {
         font-size: 1.1rem;
         font-weight: 500;
     }
 
-    .skill-rating {
+    .skillRating {
         display: flex;
         margin-top: 10px;
 
-        .rating-dot {
+        .ratingDot {
             margin: 0 2px;
             width: 15px;
             height: 15px;
@@ -36,10 +36,10 @@
                 }
             }
 
-            .rating-dot:hover {
+            .ratingDot:hover {
                 background-color: #373d48;
 
-                & ~ .rating-dot {
+                & ~ .ratingDot {
                     background-color: #d5d6d6;
                 }
             }

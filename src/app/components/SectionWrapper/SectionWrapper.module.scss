@@ -1,10 +1,10 @@
-.section-wrapper {
+.sectionWrapper {
     display: flex;
     flex-direction: column;
     padding: 30px 0;
     border-bottom: 2px solid #d4d4d4;
 
-    .section-title {
+    .sectionTitle {
         display: flex;
         height: 30px;
         align-items: center;
@@ -17,7 +17,7 @@
         margin-bottom: 20px;
     }
 
-    .section-content {
+    .sectionContent {
         flex-grow: 1;
     }
 }

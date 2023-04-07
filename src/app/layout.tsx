@@ -1,3 +1,4 @@
+import Layout from './components/Layout'
 import './globals.scss'
 
 export const metadata = {
@@ -12,7 +13,11 @@ const RootLayout = ({
 }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Layout>
+          {children}
+        </Layout>
+      </body>
     </html>
   )
 }

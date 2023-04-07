@@ -46,7 +46,8 @@ const fetchCurrentUser = () =>
         headers: {
             'Content-Type': 'application/json',
             ...getAuthHeader()
-        }
+        },
+        cache: 'no-store'
     })
     .then(requestStatus)
     .catch(e => {
@@ -93,7 +94,7 @@ const createNotPublishedCV = () =>
         throw e;
     });
 
-const removeCVById = (id: string) =>
+const removeCVById = (id: number) =>
     fetch(`${HOST_URL}/api/cv/${id}`, {
         method: 'DELETE',
         headers: {

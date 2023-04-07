@@ -1,4 +1,4 @@
-.delete-item-component {
+.deleteItemComponent {
     position: absolute;
     display: flex;
     flex: 1 1;
@@ -8,7 +8,7 @@
     height: 100%;
     pointer-events: none;
 
-    .delete-button {
+    .deleteButton {
         padding: 5px;
         cursor: pointer;
         color: red;

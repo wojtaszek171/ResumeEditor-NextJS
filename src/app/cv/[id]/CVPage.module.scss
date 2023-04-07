@@ -1,4 +1,4 @@
-.cv-page-component {
+.cvPageComponent {
     width: 100%;
     flex-direction: column;
     max-width: 1300px;
@@ -17,7 +17,7 @@
         }
     }
 
-    .content-wrapper {
+    .contentWrapper {
         flex: 1;
         flex-wrap: wrap;
         display: flex;
@@ -25,14 +25,14 @@
         width: 100%;
         margin-bottom: 40px;
 
-        .side-content {
+        .sideContent {
             flex-grow: 1;
             border-right: 2px solid #d4d4d4;
             padding: 0 20px;
             margin: 0 20px;
         }
 
-        .main-content {
+        .mainContent {
             margin-left: 40px;
             flex-grow: 3;
             flex-basis: 350px;

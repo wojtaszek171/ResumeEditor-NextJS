@@ -1,7 +1,7 @@
 import { FC, KeyboardEventHandler } from 'react';
 // import { useAppSelector } from '../../../store/hooks';
 // import { getIsTokenValid } from '../../../store/session/selector';
-import './DeleteItemButton.scss';
+import styles from './DeleteItemButton.module.scss';
 
 interface DeleteItemButtonProps {
   onDeleteClick: Function;
@@ -23,9 +23,9 @@ const DeleteItemButton: FC<DeleteItemButtonProps> = ({ onDeleteClick }) => {
     return <></>;
 
   // return (
-  //   <div className='delete-item-component'>
+  //   <div className={styles.deleteItemComponent}>
   //     <span
-  //       className='delete-button'
+  //       className={styles.deleteButton}
   //       tabIndex={0}
   //       onClick={handleDelete}
   //       onKeyDown={handleKeyDown}

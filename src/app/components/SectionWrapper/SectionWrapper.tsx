@@ -1,5 +1,5 @@
 import { FC, ReactElement } from 'react';
-import './SectionWrapper.scss';
+import styles from './SectionWrapper.module.scss';
 
 interface SectionWrapperProps {
   title?: string;
@@ -9,9 +9,9 @@ interface SectionWrapperProps {
 const SectionWrapper: FC<SectionWrapperProps> = ({ title, children }) => {
 
   return (
-    <div className='section-wrapper'>
-      {title && <span className='section-title'>{title}</span>}
-      <div className='section-content'>
+    <div className={styles.sectionWrapper}>
+      {title && <span className={styles.sectionTitle}>{title}</span>}
+      <div className={styles.sectionContent}>
         {children}
       </div>
     </div>

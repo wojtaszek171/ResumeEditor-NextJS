@@ -1,6 +1,6 @@
 import { Button } from 'pwojtaszko-design';
 import { FC } from 'react';
-import './AddSectionButton.scss';
+import styles from './AddSectionButton.module.scss';
 
 interface AddSectionButtonProps {
   onAddButton: () => void;
@@ -13,7 +13,7 @@ const AddSectionButton: FC<AddSectionButtonProps> = ({ onAddButton }) => {
   return <></>;
 
   // return (
-  //   <div className='add-section-button-component'>
+  //   <div className={styles.addSectionButtonComponent}>
   //     <Button
   //       text='+'
   //       onClick={onAddButton}

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import './Loader.scss';
+import styles from './Loader.module.scss';
 
 const Loader: FC = () => {
 
     return (
-        <div className="lds-ring">
+        <div className={styles.ldsRing}>
             <div/>
             <div/>
             <div/>

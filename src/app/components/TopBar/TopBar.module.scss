@@ -1,4 +1,4 @@
-.top-bar-component {
+.topBarComponent {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,7 +7,7 @@
     margin: 0 20px;
     border-bottom: 2px solid #d4d4d4;
 
-    .person-photo {
+    .personPhoto {
         min-width: 100px;
         min-height: 100px;
         max-width: 300px;
@@ -19,25 +19,25 @@
             height: auto;
         }
 
-        .person-photo-img {
+        .personPhotoImg {
             width: 100%;
             pointer-events: none;
             border-radius: 50%;
         }
     }
 
-    .name-wrapper {
+    .nameWrapper {
         padding-left: 40px;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
 
-        .person-name, .person-surname {
+        .personName, .personSurname {
             font-size: 3rem;
             font-weight: 500;
         }
     
-        .person-profession {
+        .personProfession {
             margin-top: 10px;
             font-size: 1.5rem;
         }

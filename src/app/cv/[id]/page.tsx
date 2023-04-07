@@ -7,7 +7,7 @@ import Languages from '@/app/components/Sections/Languages/Languages';
 import Profile from '@/app/components/Sections/Profile/Profile';
 import Skills from '@/app/components/Sections/Skills/Skills';
 import TopBar from '@/app/components/TopBar'
-import './CVPage.scss'
+import styles from './CVPage.module.scss'
 
 export function generateStaticParams() {
   return [{ id: 'static' }]
@@ -19,24 +19,21 @@ export default async function CVPage({ params }) {
   const cvDetails = await restService.fetchCVById(id);
 
   return (
-    <>
-      <HeaderComponent />
-      <div className='cv-page-component'>
-        <h1>CV: {id}</h1>
-        <TopBar />
-        <div className='content-wrapper'>
-        <div className='side-content'>
-          <Contact />
-          <Skills />
-          <Languages />
-        </div>
-        <div className='main-content'>
-          <Profile />
-          <Employment />
-          <Education />
-        </div>
-        </div>
+    <div className={styles.cvPageComponent}>
+      <h1>CV: {id}</h1>
+      <TopBar />
+      <div className={styles.contentWrapper}>
+      <div className={styles.sideContent}>
+        <Contact />
+        <Skills />
+        <Languages />
       </div>
-    </>
+      <div className={styles.mainContent}>
+        <Profile />
+        <Employment />
+        <Education />
+      </div>
+      </div>
+    </div>
   )
 }

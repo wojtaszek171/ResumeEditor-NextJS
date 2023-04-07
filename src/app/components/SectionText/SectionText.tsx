@@ -1,6 +1,6 @@
 import { FC, MouseEvent } from 'react';
 import EditableText from '../EditableText';
-import './SectionText.scss';
+import styles from './SectionText.module.scss';
 
 interface TextAreaProps {
   text: string;
@@ -56,7 +56,7 @@ const SectionText: FC<TextAreaProps> = ({ text, editable, placeholder, onChange,
 
   return (
     <div
-      className={`section-text-component${editMode ? ' edit' : ''}`}
+      className={`${styles.sectionTextComponent} ${editMode ? styles.edit : ''}`}
       // onClick={handleTextClick}
     >
       <EditableText
@@ -67,7 +67,7 @@ const SectionText: FC<TextAreaProps> = ({ text, editable, placeholder, onChange,
         showPlaceholder={isLoggedIn}
         autoExpand
       />
-      {canEdit && <div className={`section-text-edit-buttons${editMode ? ' visible' : ''}`}>
+      {canEdit && <div className={`${styles.sectionTextEditButtons} ${editMode ? styles.visible : ''}`}>
         {!editMode && <span
           className='edit-button'
           // onClick={() => setEditMode(true)}
@@ -75,19 +75,19 @@ const SectionText: FC<TextAreaProps> = ({ text, editable, placeholder, onChange,
           ✎
         </span>}
         {editMode && <span
-          className='save-button'
+          className={styles.saveButton}
           // onClick={handleSave}
         >
           ✓
         </span>}
         {editMode && <span
-          className='cancel-button'
+          className={styles.cancelButton}
           // onClick={handleCancel}
         >
           ✕
         </span>}
         {onRemove && <span
-          className='remove-button'
+          className={styles.removeButton}
           // onClick={onRemove}
         >
           ✕

@@ -1,0 +1,26 @@
+.mainPageComponent {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .sectionTitle {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding-bottom: 10px;
+  }
+
+  .publishedCvsList {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+  }
+
+  .ownedCvsList {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+}

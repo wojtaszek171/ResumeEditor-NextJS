@@ -1,11 +1,8 @@
 import { FC } from 'react';
-import { useSelector } from 'react-redux';
-import useCVTranslation from '../../../helpers/useCVTranslation';
-import { LanguageItem } from '../../../store/cvDetails/types';
-import { getIsTokenValid } from '../../../store/session/selector';
 import DeleteItemButton from '../DeleteItemButton';
 import SectionText from '../SectionText';
-import './SkillItem.scss';
+import styles from './SkillItem.module.scss';
+import { LanguageItem } from '@/app/api/types';
 
 const RATING_MAX = 5;
 
@@ -33,25 +30,25 @@ const SkillItem: FC<SkillItemProps> = ({ id, name, rating, onDelete, onNameSave,
   };
 
   return (
-    <div className='skill-component'>
-      <span className='skill-title'>
+    <div className={styles.skillComponent}>
+      <span className={styles.skillTitle}>
         {/* <SectionText
           placeholder='Skill'
           text={tName}
           onSave={handleSkillNameSave}
         /> */}
       </span>
-      <div className={`skill-rating${isLoggedIn ? ' editable' : ''}`}>
+      <div className={`${styles.skillRating} ${isLoggedIn ? styles.editable : ''}`}>
         {[...Array(rating)].map((el, i) =>
           <div
-            className={'rating-dot full'}
+            className={`${styles.ratingDot} ${styles.full}`}
             // onClick={() => handleRatingChange(i + 1)}
             key={`dot${i}full`}
           />
         )}
         {[...Array(RATING_MAX-rating)].map((el, i) =>
           <div
-            className={'rating-dot'}
+            className={styles.ratingDot}
             // onClick={() => handleRatingChange(rating + i + 1)}
             key={`dot${i}`}
           />

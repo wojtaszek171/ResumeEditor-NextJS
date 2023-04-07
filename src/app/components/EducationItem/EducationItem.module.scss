@@ -1,13 +1,13 @@
-.education-component {
+.educationComponent {
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
 
-    .education-header {
+    .educationHeader {
         display: flex;
 
-        .education-title {
+        .educationTitle {
             display: flex;
             font-size: 1.1rem;
             font-weight: 500;
@@ -15,10 +15,10 @@
             flex-wrap: wrap;
         }
     }
-    .time-frame {
+    .timeFrame {
         margin-top: 5px;
     }
-    .education-details {
+    .educationDetails {
         padding: 20px 0 0 20px;
     }
 }
