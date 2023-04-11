@@ -1,18 +1,15 @@
-import { FC } from 'react';
-// import useCVTranslation from '../../../helpers/useCVTranslation';
-// import { updateUserData } from '../../../store/cvDetails/cvDetailsSlice';
-// import { getCVDetailsUser, getSelectedLanguage } from '../../../store/cvDetails/selector';
-// import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import SectionText from '../SectionText';
 import SectionWrapper from '../SectionWrapper';
 import styles from './Contact.module.scss';
+import { CVUser } from '@/app/api/types';
+import useCVTranslation from '@/app/helpers/useCVTranslation';
 
-const Contact: FC = () => {
-  // const { address, phone, email } = useAppSelector(getCVDetailsUser);
-  // const locale = useAppSelector(getSelectedLanguage);
-  // const dispatch = useAppDispatch();
+interface ContactProps {
+  userDetails: CVUser;
+}
 
-  // const tAddress = useCVTranslation(address);
+const Contact = ({ userDetails }: ContactProps) => {
+  const tAddress = useCVTranslation(userDetails?.address);
 
   const handleAddressSave = (address: string) => {
     // dispatch(updateUserData({ address: { [locale]: address } }));
@@ -34,31 +31,31 @@ const Contact: FC = () => {
         <div className={styles.contactSection}>
           <span className={styles.contactSectionTitle}>Address</span>
           <span>
-            {/* <SectionText
+            <SectionText
               placeholder='Address'
               text={tAddress}
               onSave={handleAddressSave}
-            /> */}
+            />
           </span>
         </div>
         <div className={styles.contactSection}>
           <span className={styles.contactSectionTitle}>Phone</span>
           <span>
-            {/* <SectionText
+            <SectionText
               placeholder='Phone'
-              text={phone}
+              text={userDetails?.phone}
               onSave={handlePhoneSave}
-            /> */}
+            />
           </span>
         </div>
         <div className={styles.contactSection}>
           <span className={styles.contactSectionTitle}>Email</span>
           <span>
-            {/* <SectionText
+            <SectionText
               placeholder='Email'
-              text={email?.length ? email : ''}
+              text={userDetails?.email}
               onSave={handleEmailSave}
-            /> */}
+            />
           </span>
         </div>
       </div>

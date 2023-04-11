@@ -1,11 +1,14 @@
-import { FC } from 'react';
+import useCVTranslation from '@/app/helpers/useCVTranslation';
 import SectionWrapper from '../../SectionWrapper';
+import { CVUser } from '@/app/api/types';
+import SectionText from '../../SectionText/SectionText';
 
-const Profile: FC = () => {
-  // const userDetails = useAppSelector(getCVDetailsUser);
-  // const tPresentation = useCVTranslation(userDetails.presentation);
-  // const locale = useAppSelector(getSelectedLanguage);
-  // const dispatch = useAppDispatch();
+interface ProfileProps {
+  userDetails: CVUser;
+}
+
+const Profile = ({ userDetails }: ProfileProps) => {
+  const tPresentation = useCVTranslation(userDetails?.presentation);
 
   const handleProfileSave = (text: string) => {
     // dispatch(updateUserData({ presentation: { [locale]: text } }));
@@ -16,11 +19,11 @@ const Profile: FC = () => {
       title='Profile'
     >
       <>
-        {/* <SectionText
+        <SectionText
           placeholder='Profile details'
           text={tPresentation}
           onSave={handleProfileSave}
-        /> */}
+        />
       </>
     </SectionWrapper>
   );

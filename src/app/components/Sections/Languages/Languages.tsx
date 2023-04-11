@@ -2,11 +2,14 @@ import { FC } from 'react';
 import SectionWrapper from '../../SectionWrapper';
 import SkillItem from '../../SkillItem';
 import AddSectionButton from '../../Contact/AddSectionButton/AddSectionButton';
+import { LanguageItem } from '@/app/api/types';
 
-const Languages: FC = () => {
-  const languagesItems = []
+interface LanguagesProps {
+  languages: LanguageItem[];
+}
+
+const Languages = ({ languages }: LanguagesProps) => {
   // const dispatch = useAppDispatch();
-  // const locale = useAppSelector(getSelectedLanguage);
 
   const addSection = () => {
     // dispatch(createEmptyLanguage());
@@ -29,7 +32,7 @@ const Languages: FC = () => {
       title='Languages'
     >
       <>
-        {languagesItems.map((item: any) =>
+        {languages?.map((item: any) =>
           <SkillItem
             key={item.id}
             onDelete={onDelete}

@@ -1,10 +1,13 @@
-import { FC } from 'react';
 import SectionWrapper from '../../SectionWrapper';
 import SkillItem from '../../SkillItem';
 import AddSectionButton from '../../Contact/AddSectionButton/AddSectionButton';
+import { SkillItem as SkillItemType } from '@/app/api/types';
 
-const Skills: FC = () => {
-  const skillsItems = [];
+interface SkillsProps {
+  skills: SkillItemType[];
+}
+
+const Skills = ({ skills }: SkillsProps) => {
   // const dispatch = useAppDispatch();
   // const locale = useAppSelector(getSelectedLanguage);
 
@@ -29,7 +32,7 @@ const Skills: FC = () => {
       title='Skills'
     >
       <>
-        {skillsItems.map((item: any) =>
+        {skills?.map((item: any) =>
           <SkillItem
             key={item.id}
             onDelete={onDelete}

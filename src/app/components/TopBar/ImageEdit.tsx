@@ -1,6 +1,7 @@
 import { ImageUpload } from 'pwojtaszko-design';
 import { FC } from 'react';
 import styles from './TopBar.module.scss';
+import Image from 'next/image';
 
 interface ImageEditProps {
     edit: boolean;
@@ -17,7 +18,9 @@ const ImageEdit: FC<ImageEditProps> = ({ photo, edit }) => {
                 edit={edit}
                 round
             /> :
-            <img
+            <Image
+                width={300}
+                height={300}
                 className={styles.personPhotoImg}
                 src={photo}
                 alt='cv person'

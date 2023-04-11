@@ -2,16 +2,17 @@ import { FC } from 'react';
 import DeleteItemButton from '../DeleteItemButton';
 import styles from './EducationItem.module.scss';
 import { EducationItem as EducationItemType } from '@/app/api/types';
+import useCVTranslation from '@/app/helpers/useCVTranslation';
+import SectionText from '../SectionText/SectionText';
 
 interface EducationItemProps extends EducationItemType {}
 
 const EducationItem: FC<EducationItemProps> = ({ id, school, location, degree, details, startDate, endDate }) => {
-  // const dispatch = useAppDispatch();
-  // const locale = useAppSelector(getSelectedLanguage);
-  // const tSchool = useCVTranslation(school);
-  // const tLocation = useCVTranslation(location);
-  // const tDegree = useCVTranslation(degree);
-  // const tDetails = useCVTranslation(details);
+  const locale = 'en-us';
+  const tSchool = useCVTranslation(school);
+  const tLocation = useCVTranslation(location);
+  const tDegree = useCVTranslation(degree);
+  const tDetails = useCVTranslation(details);
 
   const handleSchoolSave = (school: string) => {
     // dispatch(updateEducationItem({ id, body: { school: { [locale]: school }}}));
@@ -37,13 +38,13 @@ const EducationItem: FC<EducationItemProps> = ({ id, school, location, degree, d
     // dispatch(deleteEducationItem(id))
   };
 
-  // const dateString = (startDate ? (new Date(startDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : '') + ' - ' + (endDate ? (new Date(endDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : 'Present')
+  const dateString = (startDate ? (new Date(startDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : '') + ' - ' + (endDate ? (new Date(endDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : 'Present')
 
   return (
     <div className={styles.educationComponent}>
       <div className={styles.educationHeader}>
         <span className={styles.educationTitle}>
-          {/* <SectionText
+          <SectionText
             placeholder='School'
             text={tSchool}
             onSave={handleSchoolSave}
@@ -53,29 +54,29 @@ const EducationItem: FC<EducationItemProps> = ({ id, school, location, degree, d
             placeholder='Degree'
             text={tDegree}
             onSave={handleDegreeSave}
-          /> */}
+          />
         </span>
         <span className={styles.educationLocation}>
-          {/* <SectionText
+          <SectionText
             placeholder='School location'
             text={tLocation}
             onSave={handleSchoolLocationSave}
-          /> */}
+          />
         </span>
       </div>
       <span className={styles.timeFrame}>
-        {/* <SectionText
+        <SectionText
           placeholder='Time frame'
           text={dateString}
           onSave={handleSchoolTimeFrameSave}
-        /> */}
+        />
       </span>
       <div className={styles.educationDetails}>
-        {/* <SectionText
+        <SectionText
           placeholder='Details'
           text={tDetails}
           onSave={handleSchoolDetailsSave}
-        /> */}
+        />
       </div>
       <DeleteItemButton onDeleteClick={handleElementDelete}/>
     </div>

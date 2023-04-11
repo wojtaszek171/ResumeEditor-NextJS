@@ -93,3 +93,18 @@ export interface CVItem {
     createdAt: string
     updatedAt: string
 }
+
+export interface CVUser {
+    id:             string;
+    cvId:           number;
+    name:           string;
+    phone:          string;
+    email:          string;
+    photo:          null;
+    addressId:      number;
+    positionId:     number;
+    presentationId: number;
+    address:        StringValue;
+    position:       StringValue;
+    presentation:   StringValue;
+}

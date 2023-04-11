@@ -1,16 +1,15 @@
-import { FC, useEffect } from 'react';
-import photoJPG from './profile.jpg';
-import ImageEdit from './ImageEdit';
 import SectionText from '../SectionText';
 import styles from './TopBar.module.scss';
+import { CVUser } from '@/app/api/types';
+import useCVTranslation from '@/app/helpers/useCVTranslation';
 
-const Name: FC = () => {
-  // const isLoggedIn = useSelector(getIsTokenValid);
-  // const userDetails = useAppSelector(getCVDetailsUser);
-  // const locale = useAppSelector(getSelectedLanguage);
-  // const dispatch = useAppDispatch();
+interface TopBarProps {
+  userDetails: CVUser;
+}
+
+export const TopBar = ({ userDetails }: TopBarProps) => {
   const isLoggedIn = false
-  // const tProfession = useCVTranslation(userDetails.position);
+  const tProfession = useCVTranslation(userDetails?.position);
 
   // const [photo, setPhoto] = useState<string | undefined>(undefined);
 
@@ -22,20 +21,6 @@ const Name: FC = () => {
     };
     reader.readAsDataURL(file);
   });
-
-  // useEffect(() => {
-  //   if (photoJPG) {
-  //     var oReq = new XMLHttpRequest();    
-  //     oReq.open('get', photoJPG , true);
-  //     oReq.responseType = 'blob';
-  //     oReq.onload = function () {
-  //       fileToDataUri(oReq.response).then((dataUri: any) => {
-  //         setPhoto(dataUri);
-  //       });
-  //     };
-  //     oReq.send();
-  //   }
-  // }, []);
 
   const handleNameSave = (name: string) => {
     // dispatch(updateUserData({ name }));
@@ -49,12 +34,12 @@ const Name: FC = () => {
     <div className={styles.topBarComponent}>
       {/* <ImageEdit
         edit={isLoggedIn}
-        photo={photo || ''}
+        photo={''}
       /> */}
       <div className={styles.nameWrapper}>
         <span className={styles.personName}>
           <SectionText
-            text={''}
+            text={userDetails?.name}
             placeholder='Name'
             onSave={handleNameSave}
           />
@@ -62,7 +47,7 @@ const Name: FC = () => {
         <span className={styles.personProfession}>
           <SectionText
             placeholder='Profession'
-            text={''}
+            text={tProfession}
             onSave={handleProfessionSave}
           />
         </span>
@@ -71,4 +56,4 @@ const Name: FC = () => {
   );
 }
 
-export default Name;
+export default TopBar;

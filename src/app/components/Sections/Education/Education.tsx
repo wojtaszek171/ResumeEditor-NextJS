@@ -1,9 +1,13 @@
-import { FC } from 'react';
 import SectionWrapper from '../../SectionWrapper';
 import AddSectionButton from '../../Contact/AddSectionButton/AddSectionButton';
+import { EducationItem as EducationItemType } from '@/app/api/types';
+import EducationItem from '../../EducationItem/EducationItem';
 
-const Education: FC = () => {
-  // const educationItems = useSelector(getCVDetailsEducation);
+interface EducationProps {
+  education: EducationItemType[]
+}
+
+const Education = ({ education }: EducationProps) => {
   // const dispatch = useAppDispatch();
 
   const addSection = () => {
@@ -15,12 +19,12 @@ const Education: FC = () => {
       title='Education'
     >
       <>
-        {/* {educationItems.map((item: EducationItemType) =>
+        {education?.map((item: EducationItemType) =>
           <EducationItem
             key={item.id}
             {...item}
           />
-        )} */}
+        )}
         <AddSectionButton onAddButton={addSection}/>
       </>
     </SectionWrapper>

@@ -2,10 +2,13 @@ import { FC } from 'react';
 import SectionWrapper from '../../SectionWrapper';
 import JobItem from '../../JobItem';
 import AddSectionButton from '../../Contact/AddSectionButton/AddSectionButton';
+import { EmploymentItem } from '@/app/api/types';
 
-const Employment: FC = () => {
-  const employmentItems = [];
-  // const dispatch = useAppDispatch();
+interface EmploymentProps {
+  employment: EmploymentItem[]
+}
+
+const Employment = ({ employment }: EmploymentProps) => {
 
   const addSection = () => {
     // dispatch(createEmptyEmployment());
@@ -16,7 +19,7 @@ const Employment: FC = () => {
       title='Employment'
     >
       <>
-        {employmentItems.map((item: any) =>
+        {employment?.map((item: any) =>
           <JobItem
             key={item.id}
             {...item}

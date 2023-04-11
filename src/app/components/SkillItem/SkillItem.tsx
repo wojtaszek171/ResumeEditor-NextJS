@@ -3,6 +3,7 @@ import DeleteItemButton from '../DeleteItemButton';
 import SectionText from '../SectionText';
 import styles from './SkillItem.module.scss';
 import { LanguageItem } from '@/app/api/types';
+import useCVTranslation from '@/app/helpers/useCVTranslation';
 
 const RATING_MAX = 5;
 
@@ -13,8 +14,7 @@ interface SkillItemProps extends LanguageItem {
 }
 
 const SkillItem: FC<SkillItemProps> = ({ id, name, rating, onDelete, onNameSave, onRatingChange }) => {
-  // const isLoggedIn = useSelector(getIsTokenValid);
-  // const tName = useCVTranslation(name);
+  const tName = useCVTranslation(name);
   const isLoggedIn = false;
 
   const handleSkillNameSave = (newName: string) => {
@@ -32,11 +32,11 @@ const SkillItem: FC<SkillItemProps> = ({ id, name, rating, onDelete, onNameSave,
   return (
     <div className={styles.skillComponent}>
       <span className={styles.skillTitle}>
-        {/* <SectionText
+        <SectionText
           placeholder='Skill'
           text={tName}
           onSave={handleSkillNameSave}
-        /> */}
+        />
       </span>
       <div className={`${styles.skillRating} ${isLoggedIn ? styles.editable : ''}`}>
         {[...Array(rating)].map((el, i) =>

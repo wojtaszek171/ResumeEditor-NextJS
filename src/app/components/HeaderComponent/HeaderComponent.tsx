@@ -27,7 +27,7 @@ const HeaderComponent = () => {
   return (
     <div className={style.header}>
         <div className={style.title}>
-          <Link href="/">CV</Link>
+          <Link href="/">Curriculum Vitae</Link>
         </div>
         <div className={style.login_button}>{!isLoggedIn && <a href="#" className="right-button" onClick={handleLoginOpen}>Login to edit</a>}</div>
         <Modal show={loginVisible} title={"Login to administrate"} onClose={handleLoginClose}>

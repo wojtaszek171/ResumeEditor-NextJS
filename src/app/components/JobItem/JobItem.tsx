@@ -3,15 +3,15 @@ import DeleteItemButton from '../DeleteItemButton';
 import SectionText from '../SectionText';
 import styles from './JobItem.module.scss';
 import { EmploymentItem } from '@/app/api/types';
+import useCVTranslation from '@/app/helpers/useCVTranslation';
 
 interface JobItemProps extends EmploymentItem {}
 
 const JobItem: FC<JobItemProps> = ({ id, company, position, location, startDate, endDate, details }) => {
-  // const dispatch = useAppDispatch();
-  // const locale = useAppSelector(getSelectedLanguage);
-  // const tPosition = useCVTranslation(position);
-  // const tLocation = useCVTranslation(location);
-  // const tDetails = useCVTranslation(details);
+  const tPosition = useCVTranslation(position);
+  const tLocation = useCVTranslation(location);
+  const tDetails = useCVTranslation(details);
+  const locale = 'en-us';
 
   const handleTitleSave = (position: string) => {
     // dispatch(updateEmploymentItem({ id, body: { position: { [locale]: position }}}));
@@ -37,18 +37,18 @@ const JobItem: FC<JobItemProps> = ({ id, company, position, location, startDate,
     // dispatch(deleteEmploymentItem(id));
   }
 
-  // const dateString = (startDate ? (new Date(startDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : '') + ' - ' + (endDate ? (new Date(endDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : 'Present')
+  const dateString = (startDate ? (new Date(startDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : '') + ' - ' + (endDate ? (new Date(endDate)).toLocaleDateString(locale, { year: "numeric", month: "short"}) : 'Present')
 
   return (
     <div className={styles.jobComponent}>
       <div className={styles.jobHeader}>
         <span className={styles.jobTitle}>
-          {/* <SectionText
+          <SectionText
             placeholder='Profession'
             text={tPosition}
             onSave={handleTitleSave}
           />
-          {!!(tPosition?.length && company?.length) && <span>,&nbsp;</span>} */}
+          {!!(tPosition?.length && company?.length) && <span>,&nbsp;</span>}
           <SectionText
             placeholder='Company'
             text={company}
@@ -56,27 +56,27 @@ const JobItem: FC<JobItemProps> = ({ id, company, position, location, startDate,
           />
         </span>
         <span className={styles.jobLocation}>
-          {/* <SectionText
+          <SectionText
             placeholder='Office location'
             text={tLocation}
             onSave={handleLocationSave}
-          /> */}
+          />
         </span>
       </div>
       <span className={styles.timeFrame}>
-        {/* <SectionText
+        <SectionText
           placeholder='Time Frame'
           text={dateString}
           onSave={handleTimeFrameSave}
           editable={false}
-        /> */}
+        />
       </span>
       <div className={styles.jobDetails}>
-        {/* <SectionText
+        <SectionText
           placeholder='Details'
           text={tDetails}
           onSave={handleDetailsSave}
-        /> */}
+        />
       </div>
       <DeleteItemButton onDeleteClick={handleDelete}/>
     </div>
