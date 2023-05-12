@@ -1,13 +1,11 @@
-import CVContent from '@/app/components/CVContent';
+import CVContent from "@/app/components/CVContent";
 
 export function generateStaticParams() {
-  return [{ id: 'static' }]
+  return [];
 }
 
 export default async function CVPage({ params }) {
   const { id } = params;
 
-  return (
-    <CVContent id={id}/>
-  )
+  return <CVContent id={id} />;
 }
